@@ -40,7 +40,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentDTO getByDepartmentCode(String code) {
 
-        Department department =  departmentRepository.findByDepartmentCode(code);
+            Department department =  departmentRepository.findByDepartmentCode(code);
         return  DepartmentMapper.mapDepartmentToDapertmentDTO(department);
 
     }
