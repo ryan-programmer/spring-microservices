@@ -17,11 +17,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     private DepartmentRepository departmentRepository;
 
-
-
     @Override
     public DepartmentDTO saveDepartment(DepartmentDTO departmentDTO) {
-
         Department department = DepartmentMapper.mapDepartmentDTOtoDepartment(departmentDTO);
         Department savedDepartment = departmentRepository.save(department);
         DepartmentDTO savedDepartmentDTO = DepartmentMapper.mapDepartmentToDapertmentDTO(savedDepartment);
@@ -30,7 +27,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<DepartmentDTO> getAllDepartment() {
-
        List<Department> department = departmentRepository.findAll();
       return department.stream().map(DepartmentMapper::mapDepartmentToDapertmentDTO)
               .collect(Collectors.toList());
@@ -39,7 +35,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentDTO getByDepartmentCode(String code) {
-
             Department department =  departmentRepository.findByDepartmentCode(code);
         return  DepartmentMapper.mapDepartmentToDapertmentDTO(department);
 

@@ -25,7 +25,6 @@ public class DepartmentMapper {
           departmentDTO.getDescription(),
           departmentDTO.getDepartmentCode()
         );
-
         return  department;
 
     }
